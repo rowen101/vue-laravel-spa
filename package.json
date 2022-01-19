@@ -24,7 +24,9 @@
     },
     "dependencies": {
         "jest-worker": "^27.4.6",
-        "tailwindcss": "^1.5.2",
-        "vue-router": "^3.3.4"
+        "tailwindcss": "^2.0.2",
+        "vue-router": "^3.3.4",
+        "vue-tailwind": "^2.5.0",
+        "@tailwindcss/forms": "^0.2.1"
     }
 }

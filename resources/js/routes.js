@@ -1,50 +1,55 @@
-import Home from './components/Home';
-import About from './components/About';
-import Register from './components/Register';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import NotFound from './components/NotFound';
-
-
-export default{
-    mode: 'history',
-    linkActiveClass: 'font-semibold',
+import Home from "./components/Home";
+import About from "./components/About";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import NotFound from "./components/NotFound";
+import Monitoring from "./components/Monitoring";
+export default {
+    mode: "history",
+    linkActiveClass: "font-semibold",
     routes: [
         {
-            path: '*',
+            path: "*",
             component: NotFound
         },
         {
-            path: '/',
+            path: "/",
             component: Home,
             name: "Home"
         },
         {
-            path: '/about',
+            path: "/monitoring",
+            component: Monitoring,
+            name: "Monitoring"
+        },
+        {
+            path: "/about",
             component: About
         },
         {
-            path: '/register',
+            path: "/register",
             component: Register
         },
         {
-            path: '/login',
+            path: "/login",
             component: Login,
-            name: 'Login'
+            name: "Login"
         },
         {
             path: "/dashboard",
             name: "Dashboard",
             component: Dashboard,
-           beforeEnter: (to, form, next) =>{
-               axios.get('/api/athenticated').then(()=>{
-                   next()
-               }).catch(()=>{
-                   return next({ name: 'Login'})
-               })
-           }
-       
-          }
-          
+            beforeEnter: (to, form, next) => {
+                axios
+                    .get("/api/athenticated")
+                    .then(() => {
+                        next();
+                    })
+                    .catch(() => {
+                        return next({ name: "Login" });
+                    });
+            }
+        }
     ]
-}
+};
