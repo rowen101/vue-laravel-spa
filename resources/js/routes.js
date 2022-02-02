@@ -11,30 +11,35 @@ export default {
     routes: [
         {
             path: "*",
-            component: NotFound
+            component: NotFound,
         },
         {
             path: "/",
             component: Home,
-            name: "Home"
+            name: "Home",
         },
         {
             path: "/monitoring",
             component: Monitoring,
-            name: "Monitoring"
+            name: "Monitoring",
         },
         {
             path: "/about",
-            component: About
+            component: About,
         },
         {
             path: "/register",
-            component: Register
+            component: Register,
         },
         {
             path: "/login",
             component: Login,
-            name: "Login"
+            name: "Login",
+        },
+        {
+            path: "/logout",
+            component: Logout,
+            name: "Logout",
         },
         {
             path: "/dashboard",
@@ -49,7 +54,7 @@ export default {
                     .catch(() => {
                         return next({ name: "Login" });
                     });
-            }
-        }
-    ]
+            },
+        },
+    ],
 };

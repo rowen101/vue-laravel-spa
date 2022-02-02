@@ -7,9 +7,11 @@
             <div class="flex">
 
                 <router-link class="mr-4" to='/' exact>Home</router-link>
-                <router-link class="mr-4" to='/dashboard'>About</router-link>
-
+                @guest
+                    <router-link class="mr-4" to='/about'>About</router-link>
+                @endguest
                 @auth
+                    <router-link class="mr-4" to='/dashboard'>Dashboard</router-link>
                     <router-link to='/monitoring'>Monitoring</router-link>
                 @endauth
             </div>
